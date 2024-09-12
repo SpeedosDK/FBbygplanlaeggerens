@@ -18,42 +18,43 @@ public class Main {
 
         // grøn
         if (time.equals("dag") && (traffic.equals("lav")) || emergency) {
-            //System.out.println("Trafiklyset er grønt");
             string1 = "Trafiklyset er grønt";
             System.out.println(string1);
         }
         // gul
-        else if (time.equals("aften") && (traffic.equals("lav")) || time.equals("nat") && (traffic.equals("lav"))) {
-            //System.out.println("Trafiklyset er gult");
+        else if (time.equals("aften") || time.equals("nat") && (traffic.equals("lav"))) {
             string1 = "Trafiklyset er gult";
             System.out.println(string1);
         }
-        // rød
-        else if (time.equals("nat") && (traffic.equals("høj")) || (areaType.equals("bolig")) && (traffic.equals("høj"))) {
+        //
+        // Rød
+        //
+        /*
+        else if (time.equals("nat") && (traffic.equals("høj")) || (areaType.equals("bolig") || areaType.equals("blandet")) || areaType.equals("erhverv") && (traffic.equals("høj"))) {
             //System.out.println("Trafiklyset er rødt");
             string1 = "Trafiklyset er rødt";
             System.out.println(string1);
         }
-        // adgang tilladt
-        if (areaType.equals("blandet") && traffic.equals(("lav")) || areaType.equals("erhverv") && traffic.equals("lav")) {
-            //System.out.println("Adgang tilladt");
-            string2 = "Adgang tilladt";
-            System.out.println(string2);
+         */
+
+        // Vi indser at der er rødt lys med høj trafik lige meget situationen
+
+        else if (traffic.equals("høj"))
+        {
+            string1 = "Trafiklyset er rødt";
+            System.out.println(string1);
         }
         // adgang forbudt
         if (time.equals("nat") && (areaType.equals("bolig")) && !emergency)
         {
-            //System.out.println("Adgang forbudt");
             string2 = "Adgang forbudt";
             System.out.println(string2);
         }
-        else  {
+        // adgang tilladt
+        else {
             string2 = "Adgang tilladt";
             System.out.println(string2);
-
         }
-
-
 
     }
 }

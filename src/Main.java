@@ -16,12 +16,16 @@ public class Main {
         String string1 = "";
         String string2 = "";
 
-        // grøn
+        //
+        // Grøn
+        //
         if (time.equals("dag") && (traffic.equals("lav")) || emergency) {
             string1 = "Trafiklyset er grønt";
             System.out.println(string1);
         }
-        // gul
+        //
+        // Gul
+        //
         else if (time.equals("aften") || time.equals("nat") && (traffic.equals("lav"))) {
             string1 = "Trafiklyset er gult";
             System.out.println(string1);
@@ -44,13 +48,17 @@ public class Main {
             string1 = "Trafiklyset er rødt";
             System.out.println(string1);
         }
-        // adgang forbudt
+        //
+        // Adgang forbudt
+        //
         if (time.equals("nat") && (areaType.equals("bolig")) && !emergency)
         {
             string2 = "Adgang forbudt";
             System.out.println(string2);
         }
-        // adgang tilladt
+        //
+        // Adgang tilladt
+        //
         else {
             string2 = "Adgang tilladt";
             System.out.println(string2);
